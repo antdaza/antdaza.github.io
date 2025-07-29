@@ -18,26 +18,28 @@
 <body class="bg-gray-950 text-white">
 
 <header class="bg-gray-900 border-b border-gray-700 shadow">
-  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-    <h1 class="text-2xl font-bold text-blue-500">ANTD Coin</h1>
+  <div class="max-w-7xl mx-auto px-4 py-4">
+    <div class="flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-blue-500">ANTD Coin</h1>
 
-    <!-- Mobile Toggle Button -->
-    <button id="menuToggle" class="text-white text-2xl md:hidden focus:outline-none">
-      <i class="fas fa-bars"></i>
-    </button>
+      <!-- Mobile Toggle -->
+      <button id="menuToggle" class="text-white text-2xl md:hidden focus:outline-none">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="hidden flex-col md:flex md:flex-row md:items-center md:space-x-6 mt-4 md:mt-0">
+      <a href="about.html" class="block py-2 hover:text-blue-400 transition">About</a>
+      <a href="index.html#create" class="block py-2 hover:text-blue-400 transition">Create</a>
+      <a href="https://explorer.antdaza.site/articles" class="block py-2 hover:text-blue-400 transition">Articles</a>
+      <a href="download.html" class="block py-2 hover:text-blue-400 transition">Download</a>
+      <a href="api_article.html" class="block py-2 hover:text-blue-400 transition">Article API</a>
+      <a href="whitepaper.html" class="block py-2 hover:text-blue-400 transition">Whitepaper</a>
+      <a href="roadmap.html" class="block py-2 text-blue-400 font-semibold transition">Roadmap</a>
+      <a href="specification.html" class="block py-2 text-blue-400 font-semibold transition">Specifications</a>
+    </nav>
   </div>
-
-  <!-- Navigation Menu -->
-  <nav id="mainNav" class="hidden flex-col md:flex md:flex-row md:items-center md:space-x-6 px-4 md:px-0 pb-4 md:pb-0">
-    <a href="about.html" class="block py-2 hover:text-blue-400 transition">About</a>
-    <a href="index.html#create" class="block py-2 hover:text-blue-400 transition">Create</a>
-    <a href="https://explorer.antdaza.site/articles" class="block py-2 hover:text-blue-400 transition">Articles</a>
-    <a href="download.html" class="block py-2 hover:text-blue-400 transition">Download</a>
-    <a href="api_article.html" class="block py-2 hover:text-blue-400 transition">Article API</a>
-    <a href="whitepaper.html" class="block py-2 hover:text-blue-400 transition">Whitepaper</a>
-    <a href="roadmap.html" class="block py-2 text-blue-400 font-semibold transition">Roadmap</a>
-    <a href="specification.html" class="block py-2 text-blue-400 font-semibold transition">Specifications</a>
-  </nav>
 
   <!-- Toggle script -->
   <script>
@@ -49,6 +51,7 @@
     });
   </script>
 </header>
+
 
 
   <!-- Wallet Downloads -->
