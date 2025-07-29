@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ANTD Coin Specifications</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-950 text-white">
+
+  <!-- Navbar -->
+  <header class="bg-gray-900 border-b border-gray-700 shadow">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-blue-500">ANTD Coin</h1>
+      <nav class="space-x-6">
+        <a href="about.html" class="hover:text-blue-400 transition">About</a>
+        <a href="index.html#create" class="hover:text-blue-400 transition">Create</a>
+        <a href="https://explorer.antdaza.site/articles" class="hover:text-blue-400 transition">Articles</a>
+        <a href="download.html" class="hover:text-blue-400 transition">Download</a>
+        <a href="api_article.html" class="hover:text-blue-400 transition">Article API</a>
+        <a href="whitepaper.html" class="hover:text-blue-400 transition">Whitepaper</a>
+        <a href="roadmap.html" class="text-blue-400 font-semibold">Roadmap</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Specification Section -->
+  <section class="py-24 px-6 bg-gradient-to-b from-gray-900 to-gray-950 text-center">
+    <h2 class="text-5xl font-bold text-blue-400 mb-8">ANTD Coin Specifications</h2>
+    <p class="text-gray-300 text-lg max-w-3xl mx-auto mb-16">
+      ANTD Coin is engineered for privacy, decentralization, and secure communication. Below are the current protocol-level specifications.
+    </p>
+
+    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 text-left">
+
+      <!-- Consensus -->
+      <div class="bg-gray-800 p-6 rounded-lg shadow-md border border-gray-700">
+        <h3 class="text-2xl font-semibold text-blue-400 mb-4"><i class="fas fa-shield-alt mr-2"></i> Consensus</h3>
+        <ul class="text-gray-300 list-disc pl-5 space-y-2">
+          <li><strong>Proof of Work:</strong> RandomX</li>
+          <li><strong>Block Time:</strong> 2 minutes (same as Monero)</li>
+          <li><strong>Difficulty Algorithm:</strong> Dynamic (Monero-compatible)</li>
+        </ul>
+      </div>
+
+      <!-- Rewards -->
+      <div class="bg-gray-800 p-6 rounded-lg shadow-md border border-gray-700">
+        <h3 class="text-2xl font-semibold text-blue-400 mb-4"><i class="fas fa-coins mr-2"></i> Block Rewards</h3>
+        <ul class="text-gray-300 list-disc pl-5 space-y-2">
+          <li><strong>Total Reward per Block:</strong> 600 ANTD</li>
+          <li><strong>Miner Reward:</strong> 200 ANTD</li>
+          <li><strong>Full Node Reward:</strong> 300 ANTD</li>
+          <li><strong>Community Development Fund:</strong> 100 ANTD</li>
+        </ul>
+      </div>
+
+      <!-- Network -->
+      <div class="bg-gray-800 p-6 rounded-lg shadow-md border border-gray-700">
+        <h3 class="text-2xl font-semibold text-blue-400 mb-4"><i class="fas fa-network-wired mr-2"></i> Network Architecture</h3>
+        <ul class="text-gray-300 list-disc pl-5 space-y-2">
+          <li><strong>Transaction Privacy:</strong> RingCT, stealth addresses</li>
+          <li><strong>Message/Article Support:</strong> On-chain via <code class="text-blue-300">tx_extra</code></li>
+          <li><strong>Community Access:</strong> Articles viewable via JSON RPC</li>
+        </ul>
+      </div>
+
+      <!-- Supply & Inflation -->
+      <div class="bg-gray-800 p-6 rounded-lg shadow-md border border-gray-700">
+        <h3 class="text-2xl font-semibold text-blue-400 mb-4"><i class="fas fa-chart-line mr-2"></i> Supply & Inflation</h3>
+        <ul class="text-gray-300 list-disc pl-5 space-y-2">
+          <li><strong>Emission:</strong> Tail emission compatible with Monero</li>
+          <li><strong>Inflation Model:</strong> Logarithmic decrease toward flat subsidy</li>
+          <li><strong>Block Emission Tail:</strong> Minimum ongoing rewards for miners and nodes</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-950 border-t border-gray-800 py-6 text-center text-gray-500 text-sm">
+    &copy; 2025 ANTD Coin. All rights reserved. Forked from Monero.
+  </footer>
+
+</body>
+</html>
