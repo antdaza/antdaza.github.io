@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Article API | ANTD Coin</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    code {
+      background-color: #1f2937;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="bg-gray-950 text-white">
+
+  <!-- Navbar -->
+  <header class="bg-gray-900 border-b border-gray-700 shadow">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-blue-500">ANTD Coin</h1>
+      <nav class="space-x-6">
+        <a href="index.html#about" class="hover:text-blue-400 transition">About</a>
+        <a href="index.html#create" class="hover:text-blue-400 transition">Create</a>
+        <a href="https://explorer.antdaza.site/articles" class="hover:text-blue-400 transition">Articles</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- API Documentation Section -->
+  <section class="py-24 px-6 bg-gradient-to-b from-gray-900 to-gray-950 text-center">
+    <h2 class="text-5xl font-bold text-blue-400 mb-6">View Article via JSON-RPC</h2>
+    <p class="text-gray-300 text-lg max-w-3xl mx-auto mb-10">
+      Use the <code>get_show_article</code> method to retrieve any published message or article from the ANTD blockchain by providing the transaction ID.
+    </p>
+
+    <div class="max-w-5xl mx-auto text-left text-sm bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 space-y-6">
+      <!-- Request -->
+      <div>
+        <h3 class="text-xl font-semibold text-blue-400 mb-2"><i class="fas fa-terminal mr-2"></i>Example cURL Request</h3>
+        <pre class="overflow-x-auto text-gray-300"><code>curl -X POST http://127.0.0.1:14041/json_rpc \
+  -H "Content-Type: application/json" \
+  -d '{
+    "jsonrpc": "2.0",
+    "id": "0",
+    "method": "get_show_article",
+    "params": {
+      "txid": "20805f943cdfefc3925597939c0b2d3f1db082992a9f524af56094d383715e48"
+    }
+}'</code></pre>
+      </div>
+
+      <!-- Response -->
+      <div>
+        <h3 class="text-xl font-semibold text-blue-400 mb-2"><i class="fas fa-code mr-2"></i>Example Response</h3>
+        <pre class="overflow-x-auto text-gray-300"><code>{
+  "id": "0",
+  "jsonrpc": "2.0",
+  "result": {
+    "article_found": true,
+    "block_height": 100,
+    "content": "Antd is blockchain with a difference",
+    "content_hash": "6a3da855dfc655e6e3dbcf2c2f5545d396508bae6c7719c22fedc72cc7350022",
+    "in_pool": false,
+    "publisher": "AntD Developer",
+    "status": "OK",
+    "title": "ANTD STARTS",
+    "tx_extra_nonce_hex": "415254430b414e5444205354415254530024416e746420697320626c6f636b636861696e2077697468206120646966666572656e63650e416e744420446576656c6f706572"
+  }
+}</code></pre>
+      </div>
+
+      <!-- Explanation -->
+      <div>
+        <h3 class="text-xl font-semibold text-blue-400 mb-2"><i class="fas fa-info-circle mr-2"></i>Field Descriptions</h3>
+        <ul class="text-gray-300 space-y-1">
+          <li><strong>article_found</strong>: Indicates whether the article was located on-chain.</li>
+          <li><strong>block_height</strong>: Block number where the article is included.</li>
+          <li><strong>title</strong>: The title of the article.</li>
+          <li><strong>content</strong>: The article’s message text (limit ~100 words).</li>
+          <li><strong>publisher</strong>: The user or address that submitted the article.</li>
+          <li><strong>content_hash</strong>: Hash of the article content for integrity.</li>
+          <li><strong>in_pool</strong>: Whether the article is still in the mempool (unconfirmed).</li>
+          <li><strong>tx_extra_nonce_hex</strong>: Raw hex-encoded data stored in the transaction extra.</li>
+          <li><strong>status</strong>: Should be <code>"OK"</code> for a valid response.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-950 border-t border-gray-800 py-6 text-center text-gray-500 text-sm">
+    &copy; 2025 ANTD Coin. All rights reserved. Forked from Monero.
+  </footer>
+
+</body>
+</html>
