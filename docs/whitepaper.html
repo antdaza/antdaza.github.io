@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ANTD Coin Whitepaper</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    h2 {
+      scroll-margin-top: 80px;
+    }
+  </style>
+</head>
+<body class="bg-gray-950 text-white">
+
+  <!-- Navbar -->
+  <header class="bg-gray-900 border-b border-gray-700 shadow">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-blue-500">ANTD Coin</h1>
+      <nav class="space-x-6">
+        <a href="about.html" class="hover:text-blue-400 transition">About</a>
+        <a href="index.html#create" class="hover:text-blue-400 transition">Create</a>
+        <a href="https://explorer.antdaza.site/articles" class="hover:text-blue-400 transition">Articles</a>
+        <a href="download.html" class="hover:text-blue-400 transition">Download</a>
+        <a href="api_article.html" class="hover:text-blue-400 transition">Article API</a>
+        <a href="whitepaper.html" class="hover:text-blue-400 transition">Whitepaper</a>
+        <a href="roadmap.html" class="text-blue-400 font-semibold">Roadmap</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Whitepaper Section -->
+  <section class="py-24 px-6 bg-gradient-to-b from-gray-900 to-gray-950 text-center">
+    <h2 class="text-5xl font-bold text-blue-400 mb-8">ANTD Coin Whitepaper</h2>
+    <p class="text-gray-300 text-lg max-w-3xl mx-auto mb-16">
+      ANTD Coin is a Monero-based blockchain fork that integrates secure communication and on-chain publishing into a privacy-focused cryptocurrency. Below is a summary of the vision, technology, and future direction.
+    </p>
+
+    <div class="max-w-4xl mx-auto space-y-16 text-left text-gray-300">
+
+      <!-- Vision -->
+      <div>
+        <h3 class="text-3xl font-semibold text-blue-400 mb-4"><i class="fas fa-eye mr-2"></i> Vision</h3>
+        <p>
+          ANTD Coin aims to go beyond financial privacy by embedding anonymous communication directly into the blockchain. It empowers users to share thoughts, send messages, and publish immutable articles on-chain — all with the same privacy guarantees as Monero transactions.
+        </p>
+      </div>
+
+      <!-- Core Features -->
+      <div>
+        <h3 class="text-3xl font-semibold text-blue-400 mb-4"><i class="fas fa-cogs mr-2"></i> Core Features</h3>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>RingCT & Stealth Addresses</strong>: Based on Monero’s battle-tested privacy architecture.</li>
+          <li><strong>Article Messaging</strong>: Publish short messages (~100 words) directly on-chain via `add_article` CLI.</li>
+          <li><strong>Encrypted Publishing</strong>: Pay publishers to post content on your behalf while preserving privacy.</li>
+          <li><strong>Decentralized Storage</strong>: Articles are stored and verified via `tx_extra`, accessible via RPC.</li>
+          <li><strong>Full Node Rewards</strong>: Future incentive model to reward users running full nodes.</li>
+        </ul>
+      </div>
+
+      <!-- Usage Example -->
+      <div>
+        <h3 class="text-3xl font-semibold text-blue-400 mb-4"><i class="fas fa-terminal mr-2"></i> Usage Example</h3>
+        <p class="mb-2">To publish a message on-chain, use the following CLI command:</p>
+        <code class="bg-gray-800 px-3 py-1 rounded text-blue-300">add_article</code>
+        <p class="mt-2">Users can optionally pay a known publisher to post on their behalf, enabling monetized publishing.</p>
+      </div>
+
+      <!-- API Integration -->
+      <div>
+        <h3 class="text-3xl font-semibold text-blue-400 mb-4"><i class="fas fa-plug mr-2"></i> Developer APIs</h3>
+        <p>
+          Developers can retrieve articles using the <code class="text-blue-300">get_show_article</code> RPC endpoint, with full access to metadata including title, publisher, block height, and content hash.
+        </p>
+      </div>
+
+      <!-- Future Roadmap -->
+      <div>
+        <h3 class="text-3xl font-semibold text-blue-400 mb-4"><i class="fas fa-road mr-2"></i> Roadmap</h3>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Expand article size limits with efficient on-chain encoding.</li>
+          <li>Introduce smart contract-style publishing access rules.</li>
+          <li>Deploy node reward system for uptime and performance.</li>
+          <li>Build dApps and libraries on top of ANTD message layer.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-950 border-t border-gray-800 py-6 text-center text-gray-500 text-sm">
+    &copy; 2025 ANTD Coin. All rights reserved. Forked from Monero.
+  </footer>
+
+</body>
+</html>
