@@ -18,20 +18,40 @@
 <body class="bg-gray-950 text-white">
 
   <!-- Navbar -->
-  <header class="bg-gray-900 border-b border-gray-700 shadow">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+<header class="bg-gray-900 border-b border-gray-700 shadow">
+  <div class="max-w-7xl mx-auto px-4 py-4">
+    <div class="flex justify-between items-center">
       <h1 class="text-2xl font-bold text-blue-500">ANTD Coin</h1>
-      <nav class="space-x-6">
-        <a href="about.html" class="hover:text-blue-400 transition">About</a>
-        <a href="index.html#create" class="hover:text-blue-400 transition">Create</a>
-        <a href="https://explorer.antdaza.site/articles" class="hover:text-blue-400 transition">Articles</a>
-        <a href="download.html" class="hover:text-blue-400 transition">Download</a>
-        <a href="api_article.html" class="hover:text-blue-400 transition">Article API</a>
-        <a href="whitepaper.html" class="hover:text-blue-400 transition">Whitepaper</a>
-        <a href="roadmap.html" class="text-blue-400 font-semibold">Roadmap</a>
-      </nav>
+
+      <!-- Mobile Toggle -->
+      <button id="menuToggle" class="text-white text-2xl md:hidden focus:outline-none">
+        <i class="fas fa-bars"></i>
+      </button>
     </div>
-  </header>
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="hidden flex-col md:flex md:flex-row md:items-center md:space-x-6 mt-4 md:mt-0">
+      <a href="about.html" class="block py-2 hover:text-blue-400 transition">About</a>
+      <a href="index.html#create" class="block py-2 hover:text-blue-400 transition">Create</a>
+      <a href="https://explorer.antdaza.site/articles" class="block py-2 hover:text-blue-400 transition">Articles</a>
+      <a href="download.html" class="block py-2 hover:text-blue-400 transition">Download</a>
+      <a href="api_article.html" class="block py-2 hover:text-blue-400 transition">Article API</a>
+      <a href="whitepaper.html" class="block py-2 hover:text-blue-400 transition">Whitepaper</a>
+      <a href="roadmap.html" class="block py-2 text-blue-400 font-semibold transition">Roadmap</a>
+      <a href="specification.html" class="block py-2 text-blue-400 font-semibold transition">Specifications</a>
+    </nav>
+  </div>
+
+  <!-- Toggle script -->
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const mainNav = document.getElementById("mainNav");
+
+    menuToggle.addEventListener("click", () => {
+      mainNav.classList.toggle("hidden");
+    });
+  </script>
+</header>
 
   <!-- Specification Section -->
   <section class="py-24 px-6 bg-gradient-to-b from-gray-900 to-gray-950 text-center">
