@@ -13,9 +13,6 @@
     body {
       font-family: 'Inter', sans-serif;
     }
-    h2 {
-      scroll-margin-top: 80px;
-    }
   </style>
 </head>
 <body class="bg-gray-950 text-white">
@@ -36,59 +33,69 @@
     </div>
   </header>
 
-  <!-- Whitepaper Section -->
+  <!-- Whitepaper -->
   <section class="py-24 px-6 bg-gradient-to-b from-gray-900 to-gray-950 text-center">
-    <h2 class="text-5xl font-bold text-blue-400 mb-8">ANTD Coin Whitepaper</h2>
+    <h2 class="text-5xl font-bold text-blue-400 mb-8">ANTD Coin: The Whitepaper</h2>
     <p class="text-gray-300 text-lg max-w-3xl mx-auto mb-16">
-      ANTD Coin is a Monero-based blockchain fork that integrates secure communication and on-chain publishing into a privacy-focused cryptocurrency. Below is a summary of the vision, technology, and future direction.
+      ANTD Coin is a privacy-first cryptocurrency based on the Monero codebase, with advanced on-chain messaging, decentralized publishing, and reward-driven infrastructure. This whitepaper outlines the core principles, architecture, and future direction of the ANTD ecosystem.
     </p>
 
     <div class="max-w-4xl mx-auto space-y-16 text-left text-gray-300">
 
-      <!-- Vision -->
+      <!-- Introduction -->
       <div>
-        <h3 class="text-3xl font-semibold text-blue-400 mb-4"><i class="fas fa-eye mr-2"></i> Vision</h3>
+        <h3 class="text-3xl font-semibold text-blue-400 mb-4"><i class="fas fa-cube mr-2"></i> Introduction</h3>
         <p>
-          ANTD Coin aims to go beyond financial privacy by embedding anonymous communication directly into the blockchain. It empowers users to share thoughts, send messages, and publish immutable articles on-chain — all with the same privacy guarantees as Monero transactions.
+          In a world increasingly surveilled and censored, ANTD Coin emerges as a platform where financial transactions and ideas can flow securely and anonymously. Building upon the proven technology of Monero, ANTD adds a unique feature: the ability to post messages and articles directly on-chain.
         </p>
       </div>
 
       <!-- Core Features -->
       <div>
-        <h3 class="text-3xl font-semibold text-blue-400 mb-4"><i class="fas fa-cogs mr-2"></i> Core Features</h3>
+        <h3 class="text-3xl font-semibold text-blue-400 mb-4"><i class="fas fa-lock mr-2"></i> Privacy & Core Technology</h3>
         <ul class="list-disc pl-6 space-y-2">
-          <li><strong>RingCT & Stealth Addresses</strong>: Based on Monero’s battle-tested privacy architecture.</li>
-          <li><strong>Article Messaging</strong>: Publish short messages (~100 words) directly on-chain via `add_article` CLI.</li>
-          <li><strong>Encrypted Publishing</strong>: Pay publishers to post content on your behalf while preserving privacy.</li>
-          <li><strong>Decentralized Storage</strong>: Articles are stored and verified via `tx_extra`, accessible via RPC.</li>
-          <li><strong>Full Node Rewards</strong>: Future incentive model to reward users running full nodes.</li>
+          <li><strong>RingCT</strong> – Ensures hidden transaction amounts.</li>
+          <li><strong>Stealth Addresses</strong> – Protects recipient identities.</li>
+          <li><strong>Decentralized Messaging</strong> – Users can embed articles/messages (~100 words) inside `tx_extra` securely.</li>
+          <li><strong>Optional Publishing</strong> – Users can pay known publishers to post on their behalf.</li>
         </ul>
       </div>
 
-      <!-- Usage Example -->
+      <!-- Message System -->
       <div>
-        <h3 class="text-3xl font-semibold text-blue-400 mb-4"><i class="fas fa-terminal mr-2"></i> Usage Example</h3>
-        <p class="mb-2">To publish a message on-chain, use the following CLI command:</p>
-        <code class="bg-gray-800 px-3 py-1 rounded text-blue-300">add_article</code>
-        <p class="mt-2">Users can optionally pay a known publisher to post on their behalf, enabling monetized publishing.</p>
-      </div>
-
-      <!-- API Integration -->
-      <div>
-        <h3 class="text-3xl font-semibold text-blue-400 mb-4"><i class="fas fa-plug mr-2"></i> Developer APIs</h3>
+        <h3 class="text-3xl font-semibold text-blue-400 mb-4"><i class="fas fa-feather-alt mr-2"></i> Message & Article Layer</h3>
         <p>
-          Developers can retrieve articles using the <code class="text-blue-300">get_show_article</code> RPC endpoint, with full access to metadata including title, publisher, block height, and content hash.
+          Using the CLI `add_article` command, anyone can publish a message on-chain. These articles are immutable, timestamped, and fully decentralized. Each post contains a title, content, publisher tag, and cryptographic content hash.
+        </p>
+        <p class="mt-2">
+          This feature makes ANTD not just a currency, but also a censorship-resistant publishing network.
         </p>
       </div>
 
-      <!-- Future Roadmap -->
+      <!-- Developer APIs -->
       <div>
-        <h3 class="text-3xl font-semibold text-blue-400 mb-4"><i class="fas fa-road mr-2"></i> Roadmap</h3>
+        <h3 class="text-3xl font-semibold text-blue-400 mb-4"><i class="fas fa-code mr-2"></i> Developer APIs</h3>
+        <p>
+          Articles are accessible through RPC using the <code class="text-blue-300">get_show_article</code> method, allowing wallets, explorers, and third-party apps to display article metadata like title, publisher, and content hash.
+        </p>
+      </div>
+
+      <!-- Node Incentives -->
+      <div>
+        <h3 class="text-3xl font-semibold text-blue-400 mb-4"><i class="fas fa-network-wired mr-2"></i> Node Participation & Rewards</h3>
+        <p>
+          ANTD encourages community participation by rewarding users who run full nodes. These nodes serve the network, validate transactions, and may eventually host message data for lightweight clients.
+        </p>
+      </div>
+
+      <!-- Future Goals -->
+      <div>
+        <h3 class="text-3xl font-semibold text-blue-400 mb-4"><i class="fas fa-lightbulb mr-2"></i> Future Vision</h3>
         <ul class="list-disc pl-6 space-y-2">
-          <li>Expand article size limits with efficient on-chain encoding.</li>
-          <li>Introduce smart contract-style publishing access rules.</li>
-          <li>Deploy node reward system for uptime and performance.</li>
-          <li>Build dApps and libraries on top of ANTD message layer.</li>
+          <li>Support for longer articles using segmented `tx_extra` formats.</li>
+          <li>Integration of encrypted content and access policies.</li>
+          <li>Tokenized incentives for publishers and node operators.</li>
+          <li>Decentralized moderation tools and content categories.</li>
         </ul>
       </div>
 
